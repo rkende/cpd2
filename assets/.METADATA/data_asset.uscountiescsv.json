@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "name": "us-counties.csv",
+    "asset_type": "data_asset",
+    "origin_country": "us",
+    "asset_category": "USER",
+    "created_at": "2022-02-10T19:46:39Z",
+    "created": 1644522399885,
+    "asset_id": "data_asset.uscountiescsv",
+    "asset_attributes": [
+      "data_asset"
+    ]
+  },
+  "entity": {
+    "data_asset": {
+      "dataset": false,
+      "mime_type": "text/csv"
+    }
+  },
+  "attachments": [
+    {
+      "asset_type": "data_asset",
+      "name": "us-counties.csv",
+      "mime": "text/csv",
+      "object_key": "data_asset/us-counties.csv",
+      "object_key_is_read_only": true,
+      "created_at": "2022-02-10T19:46:40Z",
+      "id": "ec945649-b225-47f2-8875-cf07e2ab74d0",
+      "is_managed": false,
+      "is_referenced": true,
+      "is_remote": false
+    }
+  ]
+}
