@@ -1,0 +1,55 @@
+{
+  "project" : "DataStageTestProject",
+  "projectId" : "0cb80e9d-1074-4c9d-b603-eac76ab0739a",
+  "created_by" : "admin",
+  "environment" : "cp4d",
+  "services_info" : [ {
+    "name" : "ds-canvas",
+    "version" : "521.0.11"
+  }, {
+    "name" : "ds-cas-lite",
+    "version" : "521.0.8"
+  }, {
+    "name" : "ds-codegen",
+    "version" : "521.0.13"
+  }, {
+    "name" : "ds-flow-runtime",
+    "version" : "521.0.4"
+  }, {
+    "name" : "ds-flows",
+    "version" : "521.0.13"
+  }, {
+    "name" : "ds-migration",
+    "version" : "521.0.10"
+  }, {
+    "name" : "ds-px-runtime",
+    "version" : "521.0.18"
+  }, {
+    "name" : "DSAssets",
+    "version" : "521.0.4"
+  }, {
+    "name" : "qs-ruleset",
+    "version" : "521.0.7"
+  } ],
+  "assets" : [ {
+    "name" : "Db2",
+    "type" : "connection"
+  }, {
+    "name" : "Executive Dashboard",
+    "type" : "data_intg_flow"
+  }, {
+    "name" : "PostgreSQL",
+    "type" : "connection"
+  }, {
+    "name" : "0cb80e9d-1074-4c9d-b603-eac76ab0739a-DataStage_settings",
+    "type" : "data_intg_project_settings"
+  }, {
+    "name" : "Executive Dashboard.DataStage job",
+    "type" : "job"
+  }, {
+    "name" : "Executive Dashboard",
+    "type" : "px_executables",
+    "location" : "Executive Dashboard"
+  } ],
+  "flow_job_mapping" : [ ]
+}

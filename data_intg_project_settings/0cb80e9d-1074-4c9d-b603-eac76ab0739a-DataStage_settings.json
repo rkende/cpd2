@@ -1,0 +1,63 @@
+{
+  "project" : {
+    "jobNameSuffix" : ".DataStage job",
+    "runEnvironmentId" : "55c0ff9c-01d8-4410-b1dc-67b0904c1f5b",
+    "runPriorityQueue" : "Medium",
+    "runRemoteEngineEnforcement" : false,
+    "testDataProperties" : {
+      "testCaseJobNameSuffix" : ".DataStageTestCase Job",
+      "testDataConnectionType" : ""
+    },
+    "saveFrequency" : "save_changes_automatically",
+    "formatTimeString" : "%hh:%nn:%ss",
+    "flowLimits" : {
+      "warnLimit" : 100
+    },
+    "testDataConnectionId" : "",
+    "nlsCollate" : "OFF",
+    "disableParamsRefreshCache" : false,
+    "runMessageHandlerId" : "",
+    "formatDecimalSeparator" : ".",
+    "testDataBasePath" : "",
+    "allowDuplicate" : false,
+    "sequenceNameSuffix" : ".DataStage sequence",
+    "defineParameters" : false,
+    "optimizedSequenceNameSuffix" : ".DataStage sequence job",
+    "runArtifactRetention" : {
+      "enabled" : false
+    },
+    "aiFeatures" : {
+      "enableDSAssistant" : false
+    },
+    "gitIntegration" : {
+      "enableGit" : true,
+      "gitProvider" : "git",
+      "gitFolder" : "",
+      "gitToken" : "{dsnextenc}/cEz7gq+O0qcJKHYxKOCiEe7MvYTBEq3a+sBrHwExGQH2hZD/0F2XNPVpEdstBZB",
+      "gitOwner" : "",
+      "gitURL" : "https://github.com/rkende/cpd2.git",
+      "gitBranch" : "master"
+    },
+    "thresholdLimits" : { },
+    "runEnvironmentIds" : [ "55c0ff9c-01d8-4410-b1dc-67b0904c1f5b" ],
+    "formatDateString" : "%yyyy-%mm-%dd",
+    "flowAcpControl" : true,
+    "metricsRepository" : {
+      "enableMetrics" : false,
+      "metricsRetention" : {
+        "enabled" : false
+      },
+      "connection" : {
+        "datasource_type" : "e1c23729-99d8-4407-b3df-336e33ffdc82",
+        "properties" : {
+          "query_timeout" : "300",
+          "retry_limit" : "2"
+        }
+      },
+      "enableAdvancedFind" : false
+    },
+    "nlsMap" : "UTF-8",
+    "formatTimestampString" : "%yyyy-%mm-%dd %hh:%nn:%ss",
+    "runEnvironmentNames" : [ "default_datastage_px" ]
+  }
+}

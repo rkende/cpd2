@@ -1,0 +1,31 @@
+{
+  "metadata" : {
+    "name" : "Executive Dashboard.DataStage job",
+    "asset_id" : "ab0dc54f-8e90-4f43-ac28-a7f0b9545c44",
+    "owner_id" : "1000330999",
+    "version" : 0
+  },
+  "entity" : {
+    "job" : {
+      "asset_ref" : "395904b7-f23d-424b-93c6-773f2da27336",
+      "schedule_id" : "",
+      "project_name" : "DataStageTestProject",
+      "configuration" : {
+        "env_type" : "",
+        "flow_limits" : {
+          "warn_limit" : 100
+        },
+        "env_variables" : [ ]
+      },
+      "last_run_time" : "deprecated field",
+      "asset_ref_type" : "data_intg_flow",
+      "last_run_status" : "deprecated field",
+      "last_run_initiator" : "deprecated field",
+      "schedule_creator_id" : "",
+      "enable_notifications" : true,
+      "future_scheduled_runs" : [ ],
+      "last_run_status_timestamp" : 0,
+      "flow_name" : "Executive Dashboard"
+    }
+  }
+}

@@ -1,0 +1,6370 @@
+{
+  "primary_pipeline" : "185d91bd-47bd-4d24-9c09-c269d31b4e87",
+  "pipelines" : [ {
+    "nodes" : [ {
+      "outputs" : [ {
+        "id" : "9b04743b-d109-45fd-a59c-a054a84a9813",
+        "app_data" : {
+          "datastage" : {
+            "is_source_of_link" : "1324f932-8228-4964-938d-6f70f039e67d"
+          },
+          "ui_data" : {
+            "label" : "outPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 1
+            }
+          },
+          "additionalProperties" : {
+            "enableAcp" : true
+          }
+        },
+        "schema_ref" : "638fd1f0-e61f-4a66-9792-e6da2c68b36b",
+        "parameters" : {
+          "valueDerivation" : [ ],
+          "buf_mode" : "default"
+        }
+      } ],
+      "op" : "postgresql",
+      "connection" : {
+        "ref" : "3f804d20-5966-48f4-b766-d07b7e138d28",
+        "project_ref" : "0cb80e9d-1074-4c9d-b603-eac76ab0739a",
+        "name" : "PostgreSQL",
+        "properties" : {
+          "_java._heap_size" : 256,
+          "currentOutputLinkType" : "PRIMARY",
+          "before_after.after_node" : "",
+          "before_after.before_node.fail_on_error" : true,
+          "before_after.after_node.fail_on_error" : true,
+          "outputAcpShouldHide" : true,
+          "before_after.before_node" : "",
+          "enableFlowAcpControl" : true,
+          "enableSchemalessDesign" : false,
+          "schema_name" : "CUSTOMER",
+          "table_name" : "CUSTOMER_LOYALTY",
+          "before_after.before" : "",
+          "before_after.before.fail_on_error" : true,
+          "node_number" : 0,
+          "read_mode" : "general",
+          "decimal_rounding_mode" : "floor",
+          "default_max_string_binary_precision" : 20000,
+          "generate_unicode_columns" : false,
+          "before_after.after" : "",
+          "sampling_type" : "none",
+          "node_count" : 1,
+          "before_after.after.fail_on_error" : true
+        }
+      },
+      "id" : "95585873-2d85-4c35-a5aa-0cfd32b4a13f",
+      "type" : "binding",
+      "app_data" : {
+        "ui_data" : {
+          "image" : "/data-intg/flows/graphics/palette/postgresql.svg",
+          "x_pos" : 190.08,
+          "label" : "CUSTOMER_LOYALTY",
+          "y_pos" : 118.80000000000001
+        }
+      },
+      "parameters" : {
+        "combinability" : "auto",
+        "output_count" : 1,
+        "input_count" : 0,
+        "execmode" : "default_par",
+        "preserve" : -3
+      }
+    }, {
+      "outputs" : [ {
+        "id" : "a2cb1828-44de-44bd-8738-ce83792785d2",
+        "app_data" : {
+          "datastage" : {
+            "is_source_of_link" : "966f1dee-9002-4ee2-8ac8-34a489d7ee61"
+          },
+          "ui_data" : {
+            "label" : "outPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 1
+            }
+          }
+        },
+        "schema_ref" : "c26163fc-6c25-4436-b72c-f5d115269dea",
+        "parameters" : {
+          "buf_mode" : "default"
+        }
+      } ],
+      "op" : "db2",
+      "inputs" : [ {
+        "id" : "",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "inPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 1
+            }
+          }
+        }
+      } ],
+      "connection" : {
+        "ref" : "7d8c9a6c-c938-4151-804b-4128e8a680f4",
+        "project_ref" : "0cb80e9d-1074-4c9d-b603-eac76ab0739a",
+        "fileData" : {
+          "op" : "existing-asset",
+          "fileName" : "",
+          "stageName" : "db2"
+        },
+        "name" : "Db2",
+        "connData" : {
+          "op" : "existing-asset",
+          "stageName" : "db2",
+          "connectionName" : "Db2"
+        },
+        "properties" : {
+          "outputName" : "Link_1",
+          "read_mode" : "general",
+          "valueDerivation" : [ ],
+          "stageDescription" : "",
+          "schema_name" : "CUSTOMER",
+          "table_name" : "CUSTOMER",
+          "url" : ""
+        }
+      },
+      "id" : "7421d5d6-520a-42fc-83ef-7fcd9c143b97",
+      "type" : "binding",
+      "app_data" : {
+        "ui_data" : {
+          "image" : "/data-intg/flows/graphics/palette/db2.svg",
+          "x_pos" : 190.08,
+          "label" : "CUSTOMER",
+          "y_pos" : 285.12
+        }
+      },
+      "parameters" : {
+        "output_count" : 1,
+        "input_count" : 0,
+        "execmode" : "default_par",
+        "outputcolProperties" : [ {
+          "ColumnName" : "CUSTOMER_ID",
+          "Description" : " ",
+          "Length" : 10,
+          "Signed" : true,
+          "Nullable_check" : false,
+          "Metadata" : "INTEGER",
+          "DataType" : "INTEGER",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "LOYALTY_NBR",
+          "Description" : " ",
+          "Length" : 10,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "INTEGER, Null",
+          "DataType" : "INTEGER",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "FIRST_NAME",
+          "Description" : " ",
+          "Length" : 30,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(30), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "LAST_NAME",
+          "Description" : " ",
+          "Length" : 30,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(30), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "CUSTOMER_NAME",
+          "Description" : " ",
+          "Length" : 100,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(100), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "COUNTRY",
+          "Description" : " ",
+          "Length" : 25,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(25), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "STATE_PROVINCE_NAME",
+          "Description" : " ",
+          "Length" : 50,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(50), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "STATE_PROVINCE_CODE",
+          "Description" : " ",
+          "Length" : 2,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(2), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "CITY",
+          "Description" : " ",
+          "Length" : 50,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(50), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "LATITUDE",
+          "Description" : " ",
+          "Length" : 14,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "DECIMAL(14, 6), Null",
+          "DataType" : "DECIMAL",
+          "Scale" : 6,
+          "Key" : false
+        }, {
+          "ColumnName" : "LONGITUDE",
+          "Description" : " ",
+          "Length" : 15,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "DECIMAL(15, 6), Null",
+          "DataType" : "DECIMAL",
+          "Scale" : 6,
+          "Key" : false
+        }, {
+          "ColumnName" : "POSTAL_CODE",
+          "Description" : " ",
+          "Length" : 15,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(15), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "GENDER",
+          "Description" : " ",
+          "Length" : 15,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(15), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "EDUCATION",
+          "Description" : " ",
+          "Length" : 30,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(30), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "LOCATION_CODE",
+          "Description" : " ",
+          "Length" : 20,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(20), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "INCOME",
+          "Description" : " ",
+          "Length" : 10,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "INTEGER, Null",
+          "DataType" : "INTEGER",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "MARITAL_STATUS",
+          "Description" : " ",
+          "Length" : 15,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(15), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "CREDIT_CARD_TYPE",
+          "Description" : " ",
+          "Length" : 10,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(10), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "CREDIT_CARD_NUMBER",
+          "Description" : " ",
+          "Length" : 20,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(20), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "CREDIT_CARD_CVV",
+          "Description" : " ",
+          "Length" : 4,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(4), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "CREDIT_CARD_EXPIRY",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(5), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        } ]
+      }
+    }, {
+      "outputs" : [ {
+        "id" : "3bfcab2d-abb4-4b39-aecc-3be07ee5ec0e",
+        "app_data" : {
+          "datastage" : {
+            "is_source_of_link" : "2f379e2a-be4c-4d27-a50a-687b84a41b34"
+          },
+          "ui_data" : {
+            "label" : "outPort",
+            "cardinality" : {
+              "min" : 1,
+              "max" : 1
+            }
+          },
+          "additionalProperties" : {
+            "enableAcp" : true
+          }
+        },
+        "schema_ref" : "beb3c1ec-8dd8-4c22-aea3-116bb7c22d0d",
+        "parameters" : {
+          "buf_mode" : "default"
+        }
+      } ],
+      "op" : "PxJoin",
+      "inputs" : [ {
+        "links" : [ {
+          "node_id_ref" : "95585873-2d85-4c35-a5aa-0cfd32b4a13f",
+          "type_attr" : "PRIMARY",
+          "id" : "1324f932-8228-4964-938d-6f70f039e67d",
+          "app_data" : {
+            "datastage" : { },
+            "ui_data" : {
+              "decorations" : [ {
+                "image" : "/data-intg/flows/graphics/flows/link-output-handle--default-selected.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : 0,
+                "x_pos" : -10,
+                "id" : "dec-3",
+                "position" : "source",
+                "y_pos" : -10,
+                "class_name" : "linkStartImage"
+              }, {
+                "path" : "M -15 -15 L -15 15 15 15 15 -15 Z",
+                "temporary" : false,
+                "distance" : -50,
+                "tooltip" : "Auto-partition",
+                "x_pos" : 5,
+                "id" : "dec-4",
+                "position" : "target"
+              }, {
+                "image" : "/data-intg/flows/graphics/flows/link-marking--auto-partitioning.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : -50,
+                "width" : 12,
+                "tooltip" : "Auto-partition",
+                "x_pos" : -2,
+                "id" : "dec-5",
+                "position" : "target",
+                "y_pos" : -6,
+                "height" : 12
+              }, {
+                "path" : "M -25 -20 L -25 20 25 20 25 -20 Z",
+                "temporary" : false,
+                "id" : "dec-7",
+                "position" : "middle",
+                "class_name" : "linkMiddleImage"
+              }, {
+                "temporary" : false,
+                "label_allow_return_key" : "save",
+                "label_single_line" : true,
+                "width" : 100,
+                "label_editable" : true,
+                "x_pos" : -20,
+                "id" : "dec-8",
+                "position" : "middle",
+                "label" : "LOYALTY",
+                "y_pos" : -8,
+                "height" : 80
+              } ],
+              "class_name" : "linkStyle__runMetricsLinkDefaultStyle___ixW31"
+            }
+          },
+          "link_name" : "LOYALTY",
+          "port_id_ref" : "9b04743b-d109-45fd-a59c-a054a84a9813"
+        } ],
+        "id" : "b9d96067-fb63-4cac-8a90-12842862fd7c",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "inPort",
+            "cardinality" : {
+              "min" : 2,
+              "max" : 2147483646
+            }
+          }
+        },
+        "schema_ref" : "638fd1f0-e61f-4a66-9792-e6da2c68b36b",
+        "parameters" : {
+          "deletedInputColumns" : [ ],
+          "runtime_column_propagation" : 0
+        }
+      }, {
+        "links" : [ {
+          "node_id_ref" : "7421d5d6-520a-42fc-83ef-7fcd9c143b97",
+          "type_attr" : "PRIMARY",
+          "id" : "966f1dee-9002-4ee2-8ac8-34a489d7ee61",
+          "app_data" : {
+            "datastage" : { },
+            "ui_data" : {
+              "decorations" : [ {
+                "image" : "/data-intg/flows/graphics/flows/link-output-handle--default-selected.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : 0,
+                "x_pos" : -10,
+                "id" : "dec-3",
+                "position" : "source",
+                "y_pos" : -10,
+                "class_name" : "linkStartImage"
+              }, {
+                "path" : "M -15 -15 L -15 15 15 15 15 -15 Z",
+                "temporary" : false,
+                "distance" : -50,
+                "tooltip" : "Auto-partition",
+                "x_pos" : 5,
+                "id" : "dec-4",
+                "position" : "target"
+              }, {
+                "image" : "/data-intg/flows/graphics/flows/link-marking--auto-partitioning.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : -50,
+                "width" : 12,
+                "tooltip" : "Auto-partition",
+                "x_pos" : -2,
+                "id" : "dec-5",
+                "position" : "target",
+                "y_pos" : -6,
+                "height" : 12
+              }, {
+                "path" : "M -25 -20 L -25 20 25 20 25 -20 Z",
+                "temporary" : false,
+                "id" : "dec-7",
+                "position" : "middle",
+                "class_name" : "linkMiddleImage"
+              }, {
+                "temporary" : false,
+                "label_allow_return_key" : "save",
+                "label_single_line" : true,
+                "width" : 100,
+                "label_editable" : true,
+                "x_pos" : -20,
+                "id" : "dec-8",
+                "position" : "middle",
+                "label" : "CUSTOMER",
+                "y_pos" : -8,
+                "height" : 80
+              } ],
+              "class_name" : "linkStyle__runMetricsLinkDefaultStyle___ixW31"
+            }
+          },
+          "link_name" : "CUSTOMER",
+          "port_id_ref" : "a2cb1828-44de-44bd-8738-ce83792785d2"
+        } ],
+        "id" : "82d199ab-bea3-4a28-9178-8a64c162786a",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "inPort",
+            "cardinality" : {
+              "min" : 2,
+              "max" : 2147483646
+            }
+          }
+        },
+        "schema_ref" : "c26163fc-6c25-4436-b72c-f5d115269dea",
+        "parameters" : {
+          "deletedInputColumns" : [ ]
+        }
+      } ],
+      "id" : "5a153ef7-183d-42e3-8d9f-41c7b4308bdf",
+      "type" : "execution_node",
+      "app_data" : {
+        "datastage" : {
+          "inputs_order" : "b9d96067-fb63-4cac-8a90-12842862fd7c|82d199ab-bea3-4a28-9178-8a64c162786a",
+          "outputs_order" : "3bfcab2d-abb4-4b39-aecc-3be07ee5ec0e"
+        },
+        "ui_data" : {
+          "image" : "/data-intg/flows/graphics/palette/PxJoin.svg",
+          "x_pos" : 475.20000000000005,
+          "label" : "JOIN",
+          "y_pos" : 213.84
+        }
+      },
+      "parameters" : {
+        "hideCaseSensitiveColumn" : true,
+        "showPartType" : true,
+        "keyProperties" : [ {
+          "key" : "LOYALTY_NBR"
+        } ],
+        "showCollType" : false,
+        "enableSchemalessDesign" : false,
+        "preserve" : -3,
+        "operator" : "fullouterjoin",
+        "inputName" : "LOYALTY",
+        "showSortOptions" : false,
+        "combinability" : "auto",
+        "inputcolProperties" : [ {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "INTEGER",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOYALTY_NBR",
+          "TempOldColumnName" : "LOYALTY_NBR",
+          "ColumnName" : "LOYALTY_NBR",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "INTEGER",
+          "Key" : false,
+          "Nullable" : false
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "ORDER_YEAR",
+          "TempOldColumnName" : "ORDER_YEAR",
+          "ColumnName" : "ORDER_YEAR",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(2), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "QUARTER",
+          "TempOldColumnName" : "QUARTER",
+          "ColumnName" : "QUARTER",
+          "Length" : 2,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "MONTHS_AS_MEMBER",
+          "TempOldColumnName" : "MONTHS_AS_MEMBER",
+          "ColumnName" : "MONTHS_AS_MEMBER",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(15), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOYALTY_STATUS",
+          "TempOldColumnName" : "LOYALTY_STATUS",
+          "ColumnName" : "LOYALTY_STATUS",
+          "Length" : 15,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(50), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "PRODUCT_LINE",
+          "TempOldColumnName" : "PRODUCT_LINE",
+          "ColumnName" : "PRODUCT_LINE",
+          "Length" : 50,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(20), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "COUPON_RESPONSE",
+          "TempOldColumnName" : "COUPON_RESPONSE",
+          "ColumnName" : "COUPON_RESPONSE",
+          "Length" : 20,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "COUPON_COUNT",
+          "TempOldColumnName" : "COUPON_COUNT",
+          "ColumnName" : "COUPON_COUNT",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "QUANTITY_SOLD",
+          "TempOldColumnName" : "QUANTITY_SOLD",
+          "ColumnName" : "QUANTITY_SOLD",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "UNIT_SALE_PRICE",
+          "TempOldColumnName" : "UNIT_SALE_PRICE",
+          "ColumnName" : "UNIT_SALE_PRICE",
+          "Length" : 8,
+          "MisFieldProperties" : "",
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "UNIT_COST",
+          "TempOldColumnName" : "UNIT_COST",
+          "ColumnName" : "UNIT_COST",
+          "Length" : 8,
+          "MisFieldProperties" : "",
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "REVENUE",
+          "TempOldColumnName" : "REVENUE",
+          "ColumnName" : "REVENUE",
+          "Length" : 8,
+          "MisFieldProperties" : "",
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "PLANNED_REVENUE",
+          "TempOldColumnName" : "PLANNED_REVENUE",
+          "ColumnName" : "PLANNED_REVENUE",
+          "Length" : 8,
+          "MisFieldProperties" : "",
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIPPING_DAYS",
+          "TempOldColumnName" : "SHIPPING_DAYS",
+          "ColumnName" : "SHIPPING_DAYS",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(9, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "CUSTOMER_LIFETIME_VALUE",
+          "TempOldColumnName" : "CUSTOMER_LIFETIME_VALUE",
+          "ColumnName" : "CUSTOMER_LIFETIME_VALUE",
+          "Length" : 9,
+          "MisFieldProperties" : "",
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOYALTY_COUNT",
+          "TempOldColumnName" : "LOYALTY_COUNT",
+          "ColumnName" : "LOYALTY_COUNT",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(3), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "BACKORDER_STATUS",
+          "TempOldColumnName" : "BACKORDER_STATUS",
+          "ColumnName" : "BACKORDER_STATUS",
+          "Length" : 3,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SATISFACTION_RATING",
+          "TempOldColumnName" : "SATISFACTION_RATING",
+          "ColumnName" : "SATISFACTION_RATING",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(70), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SATISFACTION_REASON",
+          "TempOldColumnName" : "SATISFACTION_REASON",
+          "ColumnName" : "SATISFACTION_REASON",
+          "Length" : 70,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        } ],
+        "InputlinkOrderingList" : [ {
+          "link_label" : "Left",
+          "link_name" : "LOYALTY"
+        }, {
+          "link_label" : "Right",
+          "link_name" : "CUSTOMER"
+        } ],
+        "output_count" : 1,
+        "execmode" : "default_par",
+        "input_count" : 2
+      }
+    }, {
+      "outputs" : [ {
+        "id" : "6d6bd650-2e8c-4175-b995-b6c94a9ebe86",
+        "app_data" : {
+          "datastage" : {
+            "is_source_of_link" : "d98b505b-9e7f-472f-929d-d233c684ff12"
+          },
+          "ui_data" : {
+            "label" : "outPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 2147483647
+            }
+          }
+        },
+        "schema_ref" : "04830886-15f8-4781-ba96-cebc181d6cc2",
+        "parameters" : {
+          "outputName" : "Link_3",
+          "buf_mode" : "default"
+        }
+      } ],
+      "op" : "PxPeek",
+      "inputs" : [ {
+        "links" : [ {
+          "node_id_ref" : "5a153ef7-183d-42e3-8d9f-41c7b4308bdf",
+          "type_attr" : "PRIMARY",
+          "id" : "2f379e2a-be4c-4d27-a50a-687b84a41b34",
+          "app_data" : {
+            "datastage" : { },
+            "ui_data" : {
+              "decorations" : [ {
+                "image" : "/data-intg/flows/graphics/flows/link-output-handle--default-selected.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : 0,
+                "x_pos" : -10,
+                "id" : "dec-3",
+                "position" : "source",
+                "y_pos" : -10,
+                "class_name" : "linkStartImage"
+              }, {
+                "path" : "M -15 -15 L -15 15 15 15 15 -15 Z",
+                "temporary" : false,
+                "distance" : -50,
+                "tooltip" : "Auto-partition",
+                "x_pos" : 5,
+                "id" : "dec-4",
+                "position" : "target"
+              }, {
+                "image" : "/data-intg/flows/graphics/flows/link-marking--auto-partitioning.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : -50,
+                "width" : 12,
+                "tooltip" : "Auto-partition",
+                "x_pos" : -2,
+                "id" : "dec-5",
+                "position" : "target",
+                "y_pos" : -6,
+                "height" : 12
+              }, {
+                "path" : "M -25 -20 L -25 20 25 20 25 -20 Z",
+                "temporary" : false,
+                "id" : "dec-7",
+                "position" : "middle",
+                "class_name" : "linkMiddleImage"
+              }, {
+                "temporary" : false,
+                "label_allow_return_key" : "save",
+                "label_single_line" : true,
+                "width" : 100,
+                "label_editable" : true,
+                "x_pos" : -20,
+                "id" : "dec-8",
+                "position" : "middle",
+                "label" : "RESULT",
+                "y_pos" : -8,
+                "height" : 80
+              } ],
+              "class_name" : "linkStyle__runMetricsLinkDefaultStyle___ixW31"
+            }
+          },
+          "link_name" : "RESULT",
+          "port_id_ref" : "3bfcab2d-abb4-4b39-aecc-3be07ee5ec0e"
+        } ],
+        "id" : "d52a2d14-40e9-49aa-8b9f-984182c0b4b6",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "inPort",
+            "cardinality" : {
+              "min" : 1,
+              "max" : 1
+            }
+          }
+        },
+        "schema_ref" : "beb3c1ec-8dd8-4c22-aea3-116bb7c22d0d",
+        "parameters" : {
+          "part_coll" : "part_type",
+          "runtime_column_propagation" : 0
+        }
+      } ],
+      "id" : "8665c7ef-a3e8-4c6e-a658-6e73014d8baf",
+      "type" : "execution_node",
+      "app_data" : {
+        "datastage" : {
+          "inputs_order" : "d52a2d14-40e9-49aa-8b9f-984182c0b4b6",
+          "outputs_order" : "6d6bd650-2e8c-4175-b995-b6c94a9ebe86"
+        },
+        "ui_data" : {
+          "image" : "/data-intg/flows/graphics/palette/PxPeek.svg",
+          "x_pos" : 665.2800000000001,
+          "label" : "PEEK",
+          "y_pos" : 213.84
+        }
+      },
+      "parameters" : {
+        "all" : " ",
+        "showPartType" : true,
+        "columns" : " ",
+        "showCollType" : false,
+        "inputName" : "PEEK",
+        "showSortOptions" : false,
+        "combinability" : "auto",
+        "OutputlinkOrderingList" : [ {
+          "link_label" : "Output 1",
+          "link_name" : "Link_3"
+        } ],
+        "inputcolProperties" : [ {
+          "Unicode" : false,
+          "Description" : "",
+          "Signed" : true,
+          "Metadata" : "INTEGER",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOYALTY_NBR",
+          "TempOldColumnName" : "LOYALTY_NBR",
+          "ColumnName" : "LOYALTY_NBR",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "INTEGER",
+          "Key" : false,
+          "Nullable" : false
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(30), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "FIRST_NAME",
+          "TempOldColumnName" : "FIRST_NAME",
+          "ColumnName" : "FIRST_NAME",
+          "Length" : 30,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(30), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LAST_NAME",
+          "TempOldColumnName" : "LAST_NAME",
+          "ColumnName" : "LAST_NAME",
+          "Length" : 30,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(100), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "CUSTOMER_NAME",
+          "TempOldColumnName" : "CUSTOMER_NAME",
+          "ColumnName" : "CUSTOMER_NAME",
+          "Length" : 100,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(25), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "COUNTRY",
+          "TempOldColumnName" : "COUNTRY",
+          "ColumnName" : "COUNTRY",
+          "Length" : 25,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(50), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "STATE_PROVINCE_NAME",
+          "TempOldColumnName" : "STATE_PROVINCE_NAME",
+          "ColumnName" : "STATE_PROVINCE_NAME",
+          "Length" : 50,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(2), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "STATE_PROVINCE_CODE",
+          "TempOldColumnName" : "STATE_PROVINCE_CODE",
+          "ColumnName" : "STATE_PROVINCE_CODE",
+          "Length" : 2,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(50), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "CITY",
+          "TempOldColumnName" : "CITY",
+          "ColumnName" : "CITY",
+          "Length" : 50,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "DECIMAL(14, 6), Null",
+          "Scale" : 6,
+          "TimeScale" : 0,
+          "OldColumnName" : "LATITUDE",
+          "TempOldColumnName" : "LATITUDE",
+          "ColumnName" : "LATITUDE",
+          "Length" : 14,
+          "MisFieldProperties" : "",
+          "DataType" : "DECIMAL",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "DECIMAL(15, 6), Null",
+          "Scale" : 6,
+          "TimeScale" : 0,
+          "OldColumnName" : "LONGITUDE",
+          "TempOldColumnName" : "LONGITUDE",
+          "ColumnName" : "LONGITUDE",
+          "Length" : 15,
+          "MisFieldProperties" : "",
+          "DataType" : "DECIMAL",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(15), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "POSTAL_CODE",
+          "TempOldColumnName" : "POSTAL_CODE",
+          "ColumnName" : "POSTAL_CODE",
+          "Length" : 15,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(15), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "GENDER",
+          "TempOldColumnName" : "GENDER",
+          "ColumnName" : "GENDER",
+          "Length" : 15,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(30), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EDUCATION",
+          "TempOldColumnName" : "EDUCATION",
+          "ColumnName" : "EDUCATION",
+          "Length" : 30,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(20), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOCATION_CODE",
+          "TempOldColumnName" : "LOCATION_CODE",
+          "ColumnName" : "LOCATION_CODE",
+          "Length" : 20,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "INTEGER, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "INCOME",
+          "TempOldColumnName" : "INCOME",
+          "ColumnName" : "INCOME",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "INTEGER",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(15), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "MARITAL_STATUS",
+          "TempOldColumnName" : "MARITAL_STATUS",
+          "ColumnName" : "MARITAL_STATUS",
+          "Length" : 15,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "ORDER_YEAR",
+          "TempOldColumnName" : "ORDER_YEAR",
+          "ColumnName" : "ORDER_YEAR",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(2), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "QUARTER",
+          "TempOldColumnName" : "QUARTER",
+          "ColumnName" : "QUARTER",
+          "Length" : 2,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "MONTHS_AS_MEMBER",
+          "TempOldColumnName" : "MONTHS_AS_MEMBER",
+          "ColumnName" : "MONTHS_AS_MEMBER",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(15), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOYALTY_STATUS",
+          "TempOldColumnName" : "LOYALTY_STATUS",
+          "ColumnName" : "LOYALTY_STATUS",
+          "Length" : 15,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(50), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "PRODUCT_LINE",
+          "TempOldColumnName" : "PRODUCT_LINE",
+          "ColumnName" : "PRODUCT_LINE",
+          "Length" : 50,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(20), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "COUPON_RESPONSE",
+          "TempOldColumnName" : "COUPON_RESPONSE",
+          "ColumnName" : "COUPON_RESPONSE",
+          "Length" : 20,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "COUPON_COUNT",
+          "TempOldColumnName" : "COUPON_COUNT",
+          "ColumnName" : "COUPON_COUNT",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "QUANTITY_SOLD",
+          "TempOldColumnName" : "QUANTITY_SOLD",
+          "ColumnName" : "QUANTITY_SOLD",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "UNIT_SALE_PRICE",
+          "TempOldColumnName" : "UNIT_SALE_PRICE",
+          "ColumnName" : "UNIT_SALE_PRICE",
+          "Length" : 8,
+          "MisFieldProperties" : "",
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "UNIT_COST",
+          "TempOldColumnName" : "UNIT_COST",
+          "ColumnName" : "UNIT_COST",
+          "Length" : 8,
+          "MisFieldProperties" : "",
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "REVENUE",
+          "TempOldColumnName" : "REVENUE",
+          "ColumnName" : "REVENUE",
+          "Length" : 8,
+          "MisFieldProperties" : "",
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "PLANNED_REVENUE",
+          "TempOldColumnName" : "PLANNED_REVENUE",
+          "ColumnName" : "PLANNED_REVENUE",
+          "Length" : 8,
+          "MisFieldProperties" : "",
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIPPING_DAYS",
+          "TempOldColumnName" : "SHIPPING_DAYS",
+          "ColumnName" : "SHIPPING_DAYS",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(9, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "CUSTOMER_LIFETIME_VALUE",
+          "TempOldColumnName" : "CUSTOMER_LIFETIME_VALUE",
+          "ColumnName" : "CUSTOMER_LIFETIME_VALUE",
+          "Length" : 9,
+          "MisFieldProperties" : "",
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOYALTY_COUNT",
+          "TempOldColumnName" : "LOYALTY_COUNT",
+          "ColumnName" : "LOYALTY_COUNT",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(3), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "BACKORDER_STATUS",
+          "TempOldColumnName" : "BACKORDER_STATUS",
+          "ColumnName" : "BACKORDER_STATUS",
+          "Length" : 3,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SATISFACTION_RATING",
+          "TempOldColumnName" : "SATISFACTION_RATING",
+          "ColumnName" : "SATISFACTION_RATING",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(70), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SATISFACTION_REASON",
+          "TempOldColumnName" : "SATISFACTION_REASON",
+          "ColumnName" : "SATISFACTION_REASON",
+          "Length" : 70,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        } ],
+        "nrecs" : 10,
+        "selection" : " ",
+        "InputlinkOrderingList" : [ {
+          "link_label" : "0",
+          "link_name" : "PEEK"
+        } ],
+        "output_count" : 1,
+        "execmode" : "default_par",
+        "input_count" : 1,
+        "name" : "name",
+        "dataset" : " "
+      }
+    }, {
+      "outputs" : [ {
+        "id" : "",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "outPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 1
+            }
+          }
+        }
+      } ],
+      "op" : "db2",
+      "inputs" : [ {
+        "links" : [ {
+          "node_id_ref" : "8665c7ef-a3e8-4c6e-a658-6e73014d8baf",
+          "type_attr" : "PRIMARY",
+          "id" : "d98b505b-9e7f-472f-929d-d233c684ff12",
+          "app_data" : {
+            "datastage" : { },
+            "ui_data" : {
+              "decorations" : [ {
+                "image" : "/data-intg/flows/graphics/flows/link-output-handle--default-selected.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : 0,
+                "x_pos" : -10,
+                "id" : "dec-3",
+                "position" : "source",
+                "y_pos" : -10,
+                "class_name" : "linkStartImage"
+              }, {
+                "path" : "M -15 -15 L -15 15 15 15 15 -15 Z",
+                "temporary" : false,
+                "distance" : -50,
+                "tooltip" : "Auto-partition",
+                "x_pos" : 5,
+                "id" : "dec-4",
+                "position" : "target"
+              }, {
+                "image" : "/data-intg/flows/graphics/flows/link-marking--auto-partitioning.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : -50,
+                "width" : 12,
+                "tooltip" : "Auto-partition",
+                "x_pos" : -2,
+                "id" : "dec-5",
+                "position" : "target",
+                "y_pos" : -6,
+                "height" : 12
+              }, {
+                "path" : "M -25 -20 L -25 20 25 20 25 -20 Z",
+                "temporary" : false,
+                "id" : "dec-7",
+                "position" : "middle",
+                "class_name" : "linkMiddleImage"
+              }, {
+                "temporary" : false,
+                "label_allow_return_key" : "save",
+                "label_single_line" : true,
+                "width" : 100,
+                "label_editable" : true,
+                "x_pos" : -20,
+                "id" : "dec-8",
+                "position" : "middle",
+                "label" : "SUMMARY",
+                "y_pos" : -8,
+                "height" : 80
+              } ],
+              "class_name" : "linkStyle__runMetricsLinkDefaultStyle___ixW31"
+            }
+          },
+          "link_name" : "SUMMARY",
+          "port_id_ref" : "6d6bd650-2e8c-4175-b995-b6c94a9ebe86"
+        } ],
+        "id" : "aca76d9a-e240-4df0-9eb6-8d36fdc49952",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "inPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 1
+            }
+          }
+        },
+        "schema_ref" : "04830886-15f8-4781-ba96-cebc181d6cc2",
+        "parameters" : { }
+      } ],
+      "connection" : {
+        "ref" : "7d8c9a6c-c938-4151-804b-4128e8a680f4",
+        "project_ref" : "0cb80e9d-1074-4c9d-b603-eac76ab0739a",
+        "name" : "Db2",
+        "properties" : {
+          "_java._heap_size" : 256,
+          "currentOutputLinkType" : "PRIMARY",
+          "before_after.after_node" : "",
+          "before_after.before_node.fail_on_error" : true,
+          "outputAcpShouldHide" : false,
+          "table_name" : "CUSTOMER_SUMMARY",
+          "before_after.before" : "",
+          "inputName" : "SUMMARY",
+          "write_mode" : "insert",
+          "node_number" : 0,
+          "before_after.after" : "",
+          "node_count" : 1,
+          "table_action" : "truncate",
+          "registerDataAsset" : false,
+          "showPartType" : true,
+          "before_after.after_node.fail_on_error" : true,
+          "batch_size" : 2000,
+          "showCollType" : false,
+          "before_after.before_node" : "",
+          "enableFlowAcpControl" : true,
+          "part_type" : "auto",
+          "schema_name" : "OUTCOMES",
+          "showSortOptions" : false,
+          "before_after.before.fail_on_error" : true,
+          "before_after.after.fail_on_error" : true,
+          "procParamProperties" : [ ]
+        }
+      },
+      "id" : "def2a206-dd55-4f7d-9e13-9cb15731b881",
+      "type" : "binding",
+      "app_data" : {
+        "ui_data" : {
+          "image" : "/data-intg/flows/graphics/palette/db2.svg",
+          "x_pos" : 974.1600000000001,
+          "label" : "CUSTOMER_SUMMARY",
+          "y_pos" : 213.84
+        }
+      },
+      "parameters" : {
+        "combinability" : "auto",
+        "inputcolProperties" : [ {
+          "Unicode" : false,
+          "Description" : "",
+          "Signed" : true,
+          "Metadata" : "INTEGER",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOYALTY_NBR",
+          "TempOldColumnName" : "LOYALTY_NBR",
+          "ColumnName" : "LOYALTY_NBR",
+          "Length" : "–",
+          "DataType" : "INTEGER",
+          "Key" : false,
+          "Nullable" : false
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(30), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "FIRST_NAME",
+          "TempOldColumnName" : "FIRST_NAME",
+          "ColumnName" : "FIRST_NAME",
+          "Length" : 30,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(30), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LAST_NAME",
+          "TempOldColumnName" : "LAST_NAME",
+          "ColumnName" : "LAST_NAME",
+          "Length" : 30,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(100), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "CUSTOMER_NAME",
+          "TempOldColumnName" : "CUSTOMER_NAME",
+          "ColumnName" : "CUSTOMER_NAME",
+          "Length" : 100,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(25), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "COUNTRY",
+          "TempOldColumnName" : "COUNTRY",
+          "ColumnName" : "COUNTRY",
+          "Length" : 25,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(50), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "STATE_PROVINCE_NAME",
+          "TempOldColumnName" : "STATE_PROVINCE_NAME",
+          "ColumnName" : "STATE_PROVINCE_NAME",
+          "Length" : 50,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(2), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "STATE_PROVINCE_CODE",
+          "TempOldColumnName" : "STATE_PROVINCE_CODE",
+          "ColumnName" : "STATE_PROVINCE_CODE",
+          "Length" : 2,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(50), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "CITY",
+          "TempOldColumnName" : "CITY",
+          "ColumnName" : "CITY",
+          "Length" : 50,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "DECIMAL(14, 6), Null",
+          "Scale" : 6,
+          "TimeScale" : 0,
+          "OldColumnName" : "LATITUDE",
+          "TempOldColumnName" : "LATITUDE",
+          "ColumnName" : "LATITUDE",
+          "Length" : 14,
+          "DataType" : "DECIMAL",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "DECIMAL(15, 6), Null",
+          "Scale" : 6,
+          "TimeScale" : 0,
+          "OldColumnName" : "LONGITUDE",
+          "TempOldColumnName" : "LONGITUDE",
+          "ColumnName" : "LONGITUDE",
+          "Length" : 15,
+          "DataType" : "DECIMAL",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(15), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "POSTAL_CODE",
+          "TempOldColumnName" : "POSTAL_CODE",
+          "ColumnName" : "POSTAL_CODE",
+          "Length" : 15,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(15), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "GENDER",
+          "TempOldColumnName" : "GENDER",
+          "ColumnName" : "GENDER",
+          "Length" : 15,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(30), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EDUCATION",
+          "TempOldColumnName" : "EDUCATION",
+          "ColumnName" : "EDUCATION",
+          "Length" : 30,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(20), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOCATION_CODE",
+          "TempOldColumnName" : "LOCATION_CODE",
+          "ColumnName" : "LOCATION_CODE",
+          "Length" : 20,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "INTEGER, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "INCOME",
+          "TempOldColumnName" : "INCOME",
+          "ColumnName" : "INCOME",
+          "Length" : "–",
+          "DataType" : "INTEGER",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(15), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "MARITAL_STATUS",
+          "TempOldColumnName" : "MARITAL_STATUS",
+          "ColumnName" : "MARITAL_STATUS",
+          "Length" : 15,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "ORDER_YEAR",
+          "TempOldColumnName" : "ORDER_YEAR",
+          "ColumnName" : "ORDER_YEAR",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(2), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "QUARTER",
+          "TempOldColumnName" : "QUARTER",
+          "ColumnName" : "QUARTER",
+          "Length" : 2,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "MONTHS_AS_MEMBER",
+          "TempOldColumnName" : "MONTHS_AS_MEMBER",
+          "ColumnName" : "MONTHS_AS_MEMBER",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(15), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOYALTY_STATUS",
+          "TempOldColumnName" : "LOYALTY_STATUS",
+          "ColumnName" : "LOYALTY_STATUS",
+          "Length" : 15,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(50), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "PRODUCT_LINE",
+          "TempOldColumnName" : "PRODUCT_LINE",
+          "ColumnName" : "PRODUCT_LINE",
+          "Length" : 50,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(20), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "COUPON_RESPONSE",
+          "TempOldColumnName" : "COUPON_RESPONSE",
+          "ColumnName" : "COUPON_RESPONSE",
+          "Length" : 20,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "COUPON_COUNT",
+          "TempOldColumnName" : "COUPON_COUNT",
+          "ColumnName" : "COUPON_COUNT",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "QUANTITY_SOLD",
+          "TempOldColumnName" : "QUANTITY_SOLD",
+          "ColumnName" : "QUANTITY_SOLD",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "UNIT_SALE_PRICE",
+          "TempOldColumnName" : "UNIT_SALE_PRICE",
+          "ColumnName" : "UNIT_SALE_PRICE",
+          "Length" : 8,
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "UNIT_COST",
+          "TempOldColumnName" : "UNIT_COST",
+          "ColumnName" : "UNIT_COST",
+          "Length" : 8,
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "REVENUE",
+          "TempOldColumnName" : "REVENUE",
+          "ColumnName" : "REVENUE",
+          "Length" : 8,
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(8, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "PLANNED_REVENUE",
+          "TempOldColumnName" : "PLANNED_REVENUE",
+          "ColumnName" : "PLANNED_REVENUE",
+          "Length" : 8,
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIPPING_DAYS",
+          "TempOldColumnName" : "SHIPPING_DAYS",
+          "ColumnName" : "SHIPPING_DAYS",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "NUMERIC(9, 2), Null",
+          "Scale" : 2,
+          "TimeScale" : 0,
+          "OldColumnName" : "CUSTOMER_LIFETIME_VALUE",
+          "TempOldColumnName" : "CUSTOMER_LIFETIME_VALUE",
+          "ColumnName" : "CUSTOMER_LIFETIME_VALUE",
+          "Length" : 9,
+          "DataType" : "NUMERIC",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "LOYALTY_COUNT",
+          "TempOldColumnName" : "LOYALTY_COUNT",
+          "ColumnName" : "LOYALTY_COUNT",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(3), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "BACKORDER_STATUS",
+          "TempOldColumnName" : "BACKORDER_STATUS",
+          "ColumnName" : "BACKORDER_STATUS",
+          "Length" : 3,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SATISFACTION_RATING",
+          "TempOldColumnName" : "SATISFACTION_RATING",
+          "ColumnName" : "SATISFACTION_RATING",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(70), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SATISFACTION_REASON",
+          "TempOldColumnName" : "SATISFACTION_REASON",
+          "ColumnName" : "SATISFACTION_REASON",
+          "Length" : 70,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        } ],
+        "spparam" : [ ],
+        "output_count" : 0,
+        "input_count" : 1,
+        "execmode" : "default_par",
+        "outputcolProperties" : [ {
+          "ColumnName" : "LOYALTY_NBR",
+          "Description" : " ",
+          "Length" : 10,
+          "Signed" : true,
+          "Nullable_check" : false,
+          "Metadata" : "INTEGER",
+          "DataType" : "INTEGER",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "FIRST_NAME",
+          "Description" : " ",
+          "Length" : 30,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(30), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "LAST_NAME",
+          "Description" : " ",
+          "Length" : 30,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(30), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "CUSTOMER_NAME",
+          "Description" : " ",
+          "Length" : 100,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(100), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "COUNTRY",
+          "Description" : " ",
+          "Length" : 25,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(25), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "STATE_PROVINCE_NAME",
+          "Description" : " ",
+          "Length" : 50,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(50), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "STATE_PROVINCE_CODE",
+          "Description" : " ",
+          "Length" : 2,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(2), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "CITY",
+          "Description" : " ",
+          "Length" : 50,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(50), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "LATITUDE",
+          "Description" : " ",
+          "Length" : 14,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "DECIMAL(14, 6), Null",
+          "DataType" : "DECIMAL",
+          "Scale" : 6,
+          "Key" : false
+        }, {
+          "ColumnName" : "LONGITUDE",
+          "Description" : " ",
+          "Length" : 15,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "DECIMAL(15, 6), Null",
+          "DataType" : "DECIMAL",
+          "Scale" : 6,
+          "Key" : false
+        }, {
+          "ColumnName" : "POSTAL_CODE",
+          "Description" : " ",
+          "Length" : 15,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(15), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "GENDER",
+          "Description" : " ",
+          "Length" : 15,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(15), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "EDUCATION",
+          "Description" : " ",
+          "Length" : 30,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(30), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "LOCATION_CODE",
+          "Description" : " ",
+          "Length" : 20,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(20), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "INCOME",
+          "Description" : " ",
+          "Length" : 10,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "INTEGER, Null",
+          "DataType" : "INTEGER",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "MARITAL_STATUS",
+          "Description" : " ",
+          "Length" : 15,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(15), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "ORDER_YEAR",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "QUARTER",
+          "Description" : " ",
+          "Length" : 2,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(2), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "MONTHS_AS_MEMBER",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "LOYALTY_STATUS",
+          "Description" : " ",
+          "Length" : 15,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(15), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "PRODUCT_LINE",
+          "Description" : " ",
+          "Length" : 50,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(50), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "COUPON_RESPONSE",
+          "Description" : " ",
+          "Length" : 20,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(20), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "COUPON_COUNT",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "QUANTITY_SOLD",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "UNIT_SALE_PRICE",
+          "Description" : " ",
+          "Length" : 8,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "DECIMAL(8, 2), Null",
+          "DataType" : "DECIMAL",
+          "Scale" : 2,
+          "Key" : false
+        }, {
+          "ColumnName" : "UNIT_COST",
+          "Description" : " ",
+          "Length" : 8,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "DECIMAL(8, 2), Null",
+          "DataType" : "DECIMAL",
+          "Scale" : 2,
+          "Key" : false
+        }, {
+          "ColumnName" : "REVENUE",
+          "Description" : " ",
+          "Length" : 8,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "DECIMAL(8, 2), Null",
+          "DataType" : "DECIMAL",
+          "Scale" : 2,
+          "Key" : false
+        }, {
+          "ColumnName" : "PLANNED_REVENUE",
+          "Description" : " ",
+          "Length" : 8,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "DECIMAL(8, 2), Null",
+          "DataType" : "DECIMAL",
+          "Scale" : 2,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIPPING_DAYS",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "CUSTOMER_LIFETIME_VALUE",
+          "Description" : " ",
+          "Length" : 9,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "DECIMAL(9, 2), Null",
+          "DataType" : "DECIMAL",
+          "Scale" : 2,
+          "Key" : false
+        }, {
+          "ColumnName" : "LOYALTY_COUNT",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "BACKORDER_STATUS",
+          "Description" : " ",
+          "Length" : 3,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(3), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SATISFACTION_RATING",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SATISFACTION_REASON",
+          "Description" : " ",
+          "Length" : 70,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(70), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        } ]
+      }
+    }, {
+      "outputs" : [ {
+        "id" : "7e1fbba8-1357-4c63-b85c-4c9ab5037c72",
+        "app_data" : {
+          "datastage" : {
+            "is_source_of_link" : "518bf365-eee9-4ada-80a2-b681e78b152a"
+          },
+          "ui_data" : {
+            "label" : "outPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 1
+            }
+          }
+        },
+        "schema_ref" : "06f86b41-6bf3-4bcf-82e4-b20ad69d7acb",
+        "parameters" : {
+          "buf_mode" : "default"
+        }
+      } ],
+      "op" : "postgresql",
+      "connection" : {
+        "ref" : "3f804d20-5966-48f4-b766-d07b7e138d28",
+        "project_ref" : "0cb80e9d-1074-4c9d-b603-eac76ab0739a",
+        "fileData" : {
+          "op" : "existing-asset",
+          "fileName" : "",
+          "stageName" : "postgresql"
+        },
+        "name" : "PostgreSQL",
+        "connData" : {
+          "op" : "existing-asset",
+          "stageName" : "postgresql",
+          "connectionName" : "PostgreSQL"
+        },
+        "properties" : {
+          "outputName" : "Link_1",
+          "read_mode" : "general",
+          "valueDerivation" : [ ],
+          "stageDescription" : "",
+          "schema_name" : "WAREHOUSE",
+          "table_name" : "WAREHOUSE_ASSIGNED_SHIFTS",
+          "url" : ""
+        }
+      },
+      "id" : "405efe13-5c00-4e79-aaa0-d2e14021e8f8",
+      "type" : "binding",
+      "app_data" : {
+        "ui_data" : {
+          "image" : "/data-intg/flows/graphics/palette/postgresql.svg",
+          "x_pos" : 190.08,
+          "label" : "WAREHOUSE_ASSIGNED_SHIFTS",
+          "y_pos" : 427.68
+        }
+      },
+      "parameters" : {
+        "output_count" : 1,
+        "input_count" : 0,
+        "execmode" : "default_par",
+        "outputcolProperties" : [ {
+          "ColumnName" : "EMPLOYEE_CODE",
+          "Description" : " ",
+          "Length" : 10,
+          "Signed" : true,
+          "Nullable_check" : false,
+          "Metadata" : "INTEGER",
+          "DataType" : "INTEGER",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_ID",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "EMPLOYEE_ASSIGNMENTS",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_ASSIGNMENTS",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "EMPLOYEE_SENIORITY",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "EMPLOYEE_QUALIFICATION",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "EMPLOYEE_PAY_RATE",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_START_HOUR",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_MIN_HOURS",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_MAX_HOURS",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_END_HOUR",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_DURATION",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_DAY_CODE",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_DAY",
+          "Description" : " ",
+          "Length" : 10,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(10), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "DEPARTMENT",
+          "Description" : " ",
+          "Length" : 30,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(30), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SKILL_REQUIRED",
+          "Description" : " ",
+          "Length" : 30,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(30), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        } ]
+      }
+    }, {
+      "outputs" : [ {
+        "id" : "5d69bb78-74c8-4f98-bcd0-058dc3c23eb8",
+        "app_data" : {
+          "datastage" : {
+            "is_source_of_link" : "a40149e5-92f1-40f2-9294-c250979ba2ad"
+          },
+          "ui_data" : {
+            "label" : "outPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 2147483647
+            }
+          }
+        },
+        "schema_ref" : "88b13780-fb3b-4095-9f49-215df373b162",
+        "parameters" : {
+          "outputName" : "Link_2",
+          "buf_mode" : "default"
+        }
+      } ],
+      "op" : "PxPeek",
+      "inputs" : [ {
+        "links" : [ {
+          "node_id_ref" : "405efe13-5c00-4e79-aaa0-d2e14021e8f8",
+          "type_attr" : "PRIMARY",
+          "id" : "518bf365-eee9-4ada-80a2-b681e78b152a",
+          "app_data" : {
+            "datastage" : { },
+            "ui_data" : {
+              "decorations" : [ {
+                "image" : "/data-intg/flows/graphics/flows/link-output-handle--default-selected.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : 0,
+                "x_pos" : -10,
+                "id" : "dec-3",
+                "position" : "source",
+                "y_pos" : -10,
+                "class_name" : "linkStartImage"
+              }, {
+                "path" : "M -15 -15 L -15 15 15 15 15 -15 Z",
+                "temporary" : false,
+                "distance" : -50,
+                "tooltip" : "Auto-partition",
+                "x_pos" : 5,
+                "id" : "dec-4",
+                "position" : "target"
+              }, {
+                "image" : "/data-intg/flows/graphics/flows/link-marking--auto-partitioning.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : -50,
+                "width" : 12,
+                "tooltip" : "Auto-partition",
+                "x_pos" : -2,
+                "id" : "dec-5",
+                "position" : "target",
+                "y_pos" : -6,
+                "height" : 12
+              }, {
+                "path" : "M -25 -20 L -25 20 25 20 25 -20 Z",
+                "temporary" : false,
+                "id" : "dec-7",
+                "position" : "middle",
+                "class_name" : "linkMiddleImage"
+              }, {
+                "temporary" : false,
+                "label_allow_return_key" : "save",
+                "label_single_line" : true,
+                "width" : 100,
+                "label_editable" : true,
+                "x_pos" : -20,
+                "id" : "dec-8",
+                "position" : "middle",
+                "label" : "SOURCE",
+                "y_pos" : -8,
+                "height" : 80
+              } ],
+              "class_name" : "linkStyle__runMetricsLinkDefaultStyle___ixW31"
+            }
+          },
+          "link_name" : "SOURCE",
+          "port_id_ref" : "7e1fbba8-1357-4c63-b85c-4c9ab5037c72"
+        } ],
+        "id" : "80bd69ef-55ce-48ce-8cb9-f354ceaad993",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "inPort",
+            "cardinality" : {
+              "min" : 1,
+              "max" : 1
+            }
+          }
+        },
+        "schema_ref" : "06f86b41-6bf3-4bcf-82e4-b20ad69d7acb",
+        "parameters" : {
+          "part_coll" : "part_type"
+        }
+      } ],
+      "id" : "34209985-ba00-4bb0-a720-b5dfc21376e7",
+      "type" : "execution_node",
+      "app_data" : {
+        "datastage" : {
+          "inputs_order" : "80bd69ef-55ce-48ce-8cb9-f354ceaad993",
+          "outputs_order" : "5d69bb78-74c8-4f98-bcd0-058dc3c23eb8"
+        },
+        "ui_data" : {
+          "image" : "/data-intg/flows/graphics/palette/PxPeek.svg",
+          "x_pos" : 665.2800000000001,
+          "label" : "PEEK_1",
+          "y_pos" : 427.68
+        }
+      },
+      "parameters" : {
+        "all" : " ",
+        "showPartType" : true,
+        "columns" : " ",
+        "showCollType" : false,
+        "inputName" : "Link_1",
+        "showSortOptions" : false,
+        "combinability" : "auto",
+        "OutputlinkOrderingList" : [ {
+          "link_label" : "Output 1",
+          "link_name" : "Link_2"
+        } ],
+        "inputcolProperties" : [ {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "INTEGER",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EMPLOYEE_CODE",
+          "TempOldColumnName" : "EMPLOYEE_CODE",
+          "ColumnName" : "EMPLOYEE_CODE",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "INTEGER",
+          "Key" : false,
+          "Nullable" : false
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_ID",
+          "TempOldColumnName" : "SHIFT_ID",
+          "ColumnName" : "SHIFT_ID",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EMPLOYEE_ASSIGNMENTS",
+          "TempOldColumnName" : "EMPLOYEE_ASSIGNMENTS",
+          "ColumnName" : "EMPLOYEE_ASSIGNMENTS",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_ASSIGNMENTS",
+          "TempOldColumnName" : "SHIFT_ASSIGNMENTS",
+          "ColumnName" : "SHIFT_ASSIGNMENTS",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EMPLOYEE_SENIORITY",
+          "TempOldColumnName" : "EMPLOYEE_SENIORITY",
+          "ColumnName" : "EMPLOYEE_SENIORITY",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EMPLOYEE_QUALIFICATION",
+          "TempOldColumnName" : "EMPLOYEE_QUALIFICATION",
+          "ColumnName" : "EMPLOYEE_QUALIFICATION",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EMPLOYEE_PAY_RATE",
+          "TempOldColumnName" : "EMPLOYEE_PAY_RATE",
+          "ColumnName" : "EMPLOYEE_PAY_RATE",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_START_HOUR",
+          "TempOldColumnName" : "SHIFT_START_HOUR",
+          "ColumnName" : "SHIFT_START_HOUR",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_MIN_HOURS",
+          "TempOldColumnName" : "SHIFT_MIN_HOURS",
+          "ColumnName" : "SHIFT_MIN_HOURS",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_MAX_HOURS",
+          "TempOldColumnName" : "SHIFT_MAX_HOURS",
+          "ColumnName" : "SHIFT_MAX_HOURS",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_END_HOUR",
+          "TempOldColumnName" : "SHIFT_END_HOUR",
+          "ColumnName" : "SHIFT_END_HOUR",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_DURATION",
+          "TempOldColumnName" : "SHIFT_DURATION",
+          "ColumnName" : "SHIFT_DURATION",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_DAY_CODE",
+          "TempOldColumnName" : "SHIFT_DAY_CODE",
+          "ColumnName" : "SHIFT_DAY_CODE",
+          "Length" : "–",
+          "MisFieldProperties" : "",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(10), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_DAY",
+          "TempOldColumnName" : "SHIFT_DAY",
+          "ColumnName" : "SHIFT_DAY",
+          "Length" : 10,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(30), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "DEPARTMENT",
+          "TempOldColumnName" : "DEPARTMENT",
+          "ColumnName" : "DEPARTMENT",
+          "Length" : 30,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(30), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SKILL_REQUIRED",
+          "TempOldColumnName" : "SKILL_REQUIRED",
+          "ColumnName" : "SKILL_REQUIRED",
+          "Length" : 30,
+          "MisFieldProperties" : "",
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        } ],
+        "nrecs" : 10,
+        "selection" : " ",
+        "InputlinkOrderingList" : [ {
+          "link_label" : "0",
+          "link_name" : "SHIFTS"
+        } ],
+        "output_count" : 1,
+        "execmode" : "default_par",
+        "input_count" : 1,
+        "name" : "name",
+        "dataset" : " "
+      }
+    }, {
+      "outputs" : [ {
+        "id" : "",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "outPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 1
+            }
+          }
+        }
+      } ],
+      "op" : "db2",
+      "inputs" : [ {
+        "links" : [ {
+          "node_id_ref" : "34209985-ba00-4bb0-a720-b5dfc21376e7",
+          "type_attr" : "PRIMARY",
+          "id" : "a40149e5-92f1-40f2-9294-c250979ba2ad",
+          "app_data" : {
+            "datastage" : { },
+            "ui_data" : {
+              "decorations" : [ {
+                "image" : "/data-intg/flows/graphics/flows/link-output-handle--default-selected.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : 0,
+                "x_pos" : -10,
+                "id" : "dec-3",
+                "position" : "source",
+                "y_pos" : -10,
+                "class_name" : "linkStartImage"
+              }, {
+                "path" : "M -15 -15 L -15 15 15 15 15 -15 Z",
+                "temporary" : false,
+                "distance" : -50,
+                "tooltip" : "Auto-partition",
+                "x_pos" : 5,
+                "id" : "dec-4",
+                "position" : "target"
+              }, {
+                "image" : "/data-intg/flows/graphics/flows/link-marking--auto-partitioning.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : -50,
+                "width" : 12,
+                "tooltip" : "Auto-partition",
+                "x_pos" : -2,
+                "id" : "dec-5",
+                "position" : "target",
+                "y_pos" : -6,
+                "height" : 12
+              }, {
+                "path" : "M -25 -20 L -25 20 25 20 25 -20 Z",
+                "temporary" : false,
+                "id" : "dec-7",
+                "position" : "middle",
+                "class_name" : "linkMiddleImage"
+              }, {
+                "temporary" : false,
+                "label_allow_return_key" : "save",
+                "label_single_line" : true,
+                "width" : 100,
+                "label_editable" : true,
+                "x_pos" : -20,
+                "id" : "dec-8",
+                "position" : "middle",
+                "label" : "TARGET",
+                "y_pos" : -8,
+                "height" : 80
+              } ],
+              "class_name" : "linkStyle__runMetricsLinkDefaultStyle___ixW31"
+            }
+          },
+          "link_name" : "TARGET",
+          "port_id_ref" : "5d69bb78-74c8-4f98-bcd0-058dc3c23eb8"
+        } ],
+        "id" : "5b0ae05c-83a7-4654-ad96-74b1841994b4",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "inPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 1
+            }
+          }
+        },
+        "schema_ref" : "88b13780-fb3b-4095-9f49-215df373b162",
+        "parameters" : { }
+      } ],
+      "connection" : {
+        "ref" : "7d8c9a6c-c938-4151-804b-4128e8a680f4",
+        "project_ref" : "0cb80e9d-1074-4c9d-b603-eac76ab0739a",
+        "name" : "Db2",
+        "properties" : {
+          "_java._heap_size" : 256,
+          "currentOutputLinkType" : "PRIMARY",
+          "before_after.after_node" : "",
+          "before_after.before_node.fail_on_error" : true,
+          "outputAcpShouldHide" : false,
+          "table_name" : "WAREHOUSE_ASSIGNED_SHIFTS",
+          "before_after.before" : "",
+          "inputName" : "TARGET",
+          "write_mode" : "insert",
+          "node_number" : 0,
+          "before_after.after" : "",
+          "node_count" : 1,
+          "table_action" : "truncate",
+          "registerDataAsset" : false,
+          "showPartType" : true,
+          "before_after.after_node.fail_on_error" : true,
+          "batch_size" : 2000,
+          "showCollType" : false,
+          "before_after.before_node" : "",
+          "enableFlowAcpControl" : true,
+          "part_type" : "auto",
+          "schema_name" : "OUTCOMES",
+          "showSortOptions" : false,
+          "before_after.before.fail_on_error" : true,
+          "before_after.after.fail_on_error" : true,
+          "procParamProperties" : [ ]
+        }
+      },
+      "id" : "ecdda706-f031-480d-abdd-e0a61f287bc8",
+      "type" : "binding",
+      "app_data" : {
+        "ui_data" : {
+          "image" : "/data-intg/flows/graphics/palette/db2.svg",
+          "x_pos" : 974.1600000000001,
+          "label" : "DB2_ASSIGNED_SHIFTS",
+          "y_pos" : 427.68
+        }
+      },
+      "parameters" : {
+        "combinability" : "auto",
+        "inputcolProperties" : [ {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "INTEGER",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EMPLOYEE_CODE",
+          "TempOldColumnName" : "EMPLOYEE_CODE",
+          "ColumnName" : "EMPLOYEE_CODE",
+          "Length" : "–",
+          "DataType" : "INTEGER",
+          "Key" : false,
+          "Nullable" : false
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_ID",
+          "TempOldColumnName" : "SHIFT_ID",
+          "ColumnName" : "SHIFT_ID",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EMPLOYEE_ASSIGNMENTS",
+          "TempOldColumnName" : "EMPLOYEE_ASSIGNMENTS",
+          "ColumnName" : "EMPLOYEE_ASSIGNMENTS",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_ASSIGNMENTS",
+          "TempOldColumnName" : "SHIFT_ASSIGNMENTS",
+          "ColumnName" : "SHIFT_ASSIGNMENTS",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EMPLOYEE_SENIORITY",
+          "TempOldColumnName" : "EMPLOYEE_SENIORITY",
+          "ColumnName" : "EMPLOYEE_SENIORITY",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EMPLOYEE_QUALIFICATION",
+          "TempOldColumnName" : "EMPLOYEE_QUALIFICATION",
+          "ColumnName" : "EMPLOYEE_QUALIFICATION",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "EMPLOYEE_PAY_RATE",
+          "TempOldColumnName" : "EMPLOYEE_PAY_RATE",
+          "ColumnName" : "EMPLOYEE_PAY_RATE",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_START_HOUR",
+          "TempOldColumnName" : "SHIFT_START_HOUR",
+          "ColumnName" : "SHIFT_START_HOUR",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_MIN_HOURS",
+          "TempOldColumnName" : "SHIFT_MIN_HOURS",
+          "ColumnName" : "SHIFT_MIN_HOURS",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_MAX_HOURS",
+          "TempOldColumnName" : "SHIFT_MAX_HOURS",
+          "ColumnName" : "SHIFT_MAX_HOURS",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_END_HOUR",
+          "TempOldColumnName" : "SHIFT_END_HOUR",
+          "ColumnName" : "SHIFT_END_HOUR",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_DURATION",
+          "TempOldColumnName" : "SHIFT_DURATION",
+          "ColumnName" : "SHIFT_DURATION",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : true,
+          "Metadata" : "SMALLINT, Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_DAY_CODE",
+          "TempOldColumnName" : "SHIFT_DAY_CODE",
+          "ColumnName" : "SHIFT_DAY_CODE",
+          "Length" : "–",
+          "DataType" : "SMALLINT",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(10), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SHIFT_DAY",
+          "TempOldColumnName" : "SHIFT_DAY",
+          "ColumnName" : "SHIFT_DAY",
+          "Length" : 10,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(30), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "DEPARTMENT",
+          "TempOldColumnName" : "DEPARTMENT",
+          "ColumnName" : "DEPARTMENT",
+          "Length" : 30,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        }, {
+          "Unicode" : false,
+          "Description" : " ",
+          "Signed" : false,
+          "Metadata" : "VARCHAR(30), Null",
+          "Scale" : 0,
+          "TimeScale" : 0,
+          "OldColumnName" : "SKILL_REQUIRED",
+          "TempOldColumnName" : "SKILL_REQUIRED",
+          "ColumnName" : "SKILL_REQUIRED",
+          "Length" : 30,
+          "DataType" : "VARCHAR",
+          "Key" : false,
+          "Nullable" : true
+        } ],
+        "spparam" : [ ],
+        "output_count" : 0,
+        "input_count" : 1,
+        "execmode" : "default_par",
+        "outputcolProperties" : [ {
+          "ColumnName" : "EMPLOYEE_CODE",
+          "Description" : " ",
+          "Length" : 10,
+          "Signed" : true,
+          "Nullable_check" : false,
+          "Metadata" : "INTEGER",
+          "DataType" : "INTEGER",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_ID",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "EMPLOYEE_ASSIGNMENTS",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_ASSIGNMENTS",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "EMPLOYEE_SENIORITY",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "EMPLOYEE_QUALIFICATION",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "EMPLOYEE_PAY_RATE",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_START_HOUR",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_MIN_HOURS",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_MAX_HOURS",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_END_HOUR",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_DURATION",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_DAY_CODE",
+          "Description" : " ",
+          "Length" : 5,
+          "Signed" : true,
+          "Nullable_check" : true,
+          "Metadata" : "SMALLINT, Null",
+          "DataType" : "SMALLINT",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SHIFT_DAY",
+          "Description" : " ",
+          "Length" : 10,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(10), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "DEPARTMENT",
+          "Description" : " ",
+          "Length" : 30,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(30), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        }, {
+          "ColumnName" : "SKILL_REQUIRED",
+          "Description" : " ",
+          "Length" : 30,
+          "Signed" : false,
+          "Nullable_check" : true,
+          "Metadata" : "VARCHAR(30), Null",
+          "DataType" : "VARCHAR",
+          "Scale" : 0,
+          "Key" : false
+        } ]
+      }
+    } ],
+    "description" : "DataStage flow that joins data from Db2 and PostgreSQL to populate the CUSTOMER_SUMMARY and WAREHOUSE_ASSIGNED_SHIFTS table for Cognos Analytics to create the executive dashboard reports.",
+    "id" : "185d91bd-47bd-4d24-9c09-c269d31b4e87",
+    "app_data" : {
+      "datastage" : {
+        "nls_map_name" : "",
+        "nls_locale" : "OFF"
+      },
+      "ui_data" : {
+        "comments" : [ ]
+      }
+    },
+    "runtime_ref" : "pxOsh"
+  } ],
+  "external_paramsets" : [ ],
+  "json_schema" : "https://api.dataplatform.ibm.com/schemas/common-pipeline/pipeline-flow/pipeline-flow-v3-schema.json",
+  "schemas" : [ {
+    "id" : "638fd1f0-e61f-4a66-9792-e6da2c68b36b",
+    "fields" : [ {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : false,
+      "name" : "LOYALTY_NBR",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "INTEGER",
+        "is_unicode_string" : false,
+        "type_code" : "INT32"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "ORDER_YEAR",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 2,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 2,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "QUARTER",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "MONTHS_AS_MEMBER",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 15,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "LOYALTY_STATUS",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 50,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 50,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "PRODUCT_LINE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 20,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 20,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "COUPON_RESPONSE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "COUPON_COUNT",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "QUANTITY_SOLD",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 8,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "UNIT_SALE_PRICE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 8,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "UNIT_COST",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 8,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "REVENUE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 8,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "PLANNED_REVENUE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIPPING_DAYS",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 9,
+        "decimal_scale" : 2,
+        "decimal_precision" : 9,
+        "description" : " ",
+        "max_length" : 9,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "CUSTOMER_LIFETIME_VALUE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "LOYALTY_COUNT",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 3,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 3,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "BACKORDER_STATUS",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SATISFACTION_RATING",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 70,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 70,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "SATISFACTION_REASON",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    } ]
+  }, {
+    "id" : "c26163fc-6c25-4436-b72c-f5d115269dea",
+    "fields" : [ {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : false,
+      "name" : "CUSTOMER_ID",
+      "type" : "INTEGER",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "INTEGER",
+        "is_unicode_string" : false,
+        "type_code" : "INT32"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "LOYALTY_NBR",
+      "type" : "INTEGER",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "INTEGER",
+        "is_unicode_string" : false,
+        "type_code" : "INT32"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 30,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "FIRST_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 30,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "LAST_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 100,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 100,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "CUSTOMER_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 25,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 25,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "COUNTRY",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 50,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 50,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "STATE_PROVINCE_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 2,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 2,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "STATE_PROVINCE_CODE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 50,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 50,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "CITY",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 14,
+        "decimal_scale" : 6,
+        "decimal_precision" : 14,
+        "description" : " ",
+        "max_length" : 14,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "LATITUDE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "DECIMAL",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 15,
+        "decimal_scale" : 6,
+        "decimal_precision" : 15,
+        "description" : " ",
+        "max_length" : 15,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "LONGITUDE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "DECIMAL",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 15,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "POSTAL_CODE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 15,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "GENDER",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 30,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "EDUCATION",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 20,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 20,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "LOCATION_CODE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "INCOME",
+      "type" : "INTEGER",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "INTEGER",
+        "is_unicode_string" : false,
+        "type_code" : "INT32"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 15,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "MARITAL_STATUS",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    } ]
+  }, {
+    "id" : "beb3c1ec-8dd8-4c22-aea3-116bb7c22d0d",
+    "fields" : [ {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : "",
+        "source_field_id" : "LOYALTY.LOYALTY_NBR",
+        "is_signed" : true
+      },
+      "nullable" : false,
+      "name" : "LOYALTY_NBR",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "INTEGER",
+        "is_unicode_string" : false,
+        "type_code" : "INT32"
+      },
+      "type" : "integer"
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.FIRST_NAME",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "FIRST_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.LAST_NAME",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "LAST_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.CUSTOMER_NAME",
+        "max_length" : 100,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "CUSTOMER_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.COUNTRY",
+        "max_length" : 25,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "COUNTRY",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.STATE_PROVINCE_NAME",
+        "max_length" : 50,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "STATE_PROVINCE_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.STATE_PROVINCE_CODE",
+        "max_length" : 2,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "STATE_PROVINCE_CODE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.CITY",
+        "max_length" : 50,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "CITY",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 6,
+        "decimal_precision" : 14,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.LATITUDE",
+        "max_length" : 14,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "LATITUDE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "DECIMAL",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 6,
+        "decimal_precision" : 15,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.LONGITUDE",
+        "max_length" : 15,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "LONGITUDE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "DECIMAL",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.POSTAL_CODE",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "POSTAL_CODE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.GENDER",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "GENDER",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.EDUCATION",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "EDUCATION",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.LOCATION_CODE",
+        "max_length" : 20,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "LOCATION_CODE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.INCOME",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "INCOME",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "INTEGER",
+        "is_unicode_string" : false,
+        "type_code" : "INT32"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "CUSTOMER.MARITAL_STATUS",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "MARITAL_STATUS",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.ORDER_YEAR",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "ORDER_YEAR",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.QUARTER",
+        "max_length" : 2,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "QUARTER",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.MONTHS_AS_MEMBER",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "MONTHS_AS_MEMBER",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.LOYALTY_STATUS",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "LOYALTY_STATUS",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.PRODUCT_LINE",
+        "max_length" : 50,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "PRODUCT_LINE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.COUPON_RESPONSE",
+        "max_length" : 20,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "COUPON_RESPONSE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.COUPON_COUNT",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "COUPON_COUNT",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.QUANTITY_SOLD",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "QUANTITY_SOLD",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.UNIT_SALE_PRICE",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "UNIT_SALE_PRICE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.UNIT_COST",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "UNIT_COST",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.REVENUE",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "REVENUE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.PLANNED_REVENUE",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "PLANNED_REVENUE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.SHIPPING_DAYS",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIPPING_DAYS",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 2,
+        "decimal_precision" : 9,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.CUSTOMER_LIFETIME_VALUE",
+        "max_length" : 9,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "CUSTOMER_LIFETIME_VALUE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.LOYALTY_COUNT",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "LOYALTY_COUNT",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.BACKORDER_STATUS",
+        "max_length" : 3,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "BACKORDER_STATUS",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.SATISFACTION_RATING",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SATISFACTION_RATING",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "LOYALTY.SATISFACTION_REASON",
+        "max_length" : 70,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "SATISFACTION_REASON",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    } ]
+  }, {
+    "id" : "04830886-15f8-4781-ba96-cebc181d6cc2",
+    "fields" : [ {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : "",
+        "source_field_id" : "RESULT.LOYALTY_NBR",
+        "is_signed" : true
+      },
+      "nullable" : false,
+      "name" : "LOYALTY_NBR",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "INTEGER",
+        "is_unicode_string" : false,
+        "type_code" : "INT32"
+      },
+      "type" : "integer"
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.FIRST_NAME",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "FIRST_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.LAST_NAME",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "LAST_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.CUSTOMER_NAME",
+        "max_length" : 100,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "CUSTOMER_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.COUNTRY",
+        "max_length" : 25,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "COUNTRY",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.STATE_PROVINCE_NAME",
+        "max_length" : 50,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "STATE_PROVINCE_NAME",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.STATE_PROVINCE_CODE",
+        "max_length" : 2,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "STATE_PROVINCE_CODE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.CITY",
+        "max_length" : 50,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "CITY",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 6,
+        "decimal_precision" : 14,
+        "description" : " ",
+        "source_field_id" : "RESULT.LATITUDE",
+        "max_length" : 14,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "LATITUDE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "DECIMAL",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 6,
+        "decimal_precision" : 15,
+        "description" : " ",
+        "source_field_id" : "RESULT.LONGITUDE",
+        "max_length" : 15,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "LONGITUDE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "DECIMAL",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.POSTAL_CODE",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "POSTAL_CODE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.GENDER",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "GENDER",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.EDUCATION",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "EDUCATION",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.LOCATION_CODE",
+        "max_length" : 20,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "LOCATION_CODE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.INCOME",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "INCOME",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "INTEGER",
+        "is_unicode_string" : false,
+        "type_code" : "INT32"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.MARITAL_STATUS",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "MARITAL_STATUS",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.ORDER_YEAR",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "ORDER_YEAR",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.QUARTER",
+        "max_length" : 2,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "QUARTER",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.MONTHS_AS_MEMBER",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "MONTHS_AS_MEMBER",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.LOYALTY_STATUS",
+        "max_length" : 15,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "LOYALTY_STATUS",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.PRODUCT_LINE",
+        "max_length" : 50,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "PRODUCT_LINE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.COUPON_RESPONSE",
+        "max_length" : 20,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "COUPON_RESPONSE",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.COUPON_COUNT",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "COUPON_COUNT",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.QUANTITY_SOLD",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "QUANTITY_SOLD",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "source_field_id" : "RESULT.UNIT_SALE_PRICE",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "UNIT_SALE_PRICE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "source_field_id" : "RESULT.UNIT_COST",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "UNIT_COST",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "source_field_id" : "RESULT.REVENUE",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "REVENUE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 2,
+        "decimal_precision" : 8,
+        "description" : " ",
+        "source_field_id" : "RESULT.PLANNED_REVENUE",
+        "max_length" : 8,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "PLANNED_REVENUE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.SHIPPING_DAYS",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIPPING_DAYS",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 2,
+        "decimal_precision" : 9,
+        "description" : " ",
+        "source_field_id" : "RESULT.CUSTOMER_LIFETIME_VALUE",
+        "max_length" : 9,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "CUSTOMER_LIFETIME_VALUE",
+      "type" : "double",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "NUMERIC",
+        "is_unicode_string" : false,
+        "type_code" : "DECIMAL"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.LOYALTY_COUNT",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "LOYALTY_COUNT",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.BACKORDER_STATUS",
+        "max_length" : 3,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "BACKORDER_STATUS",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.SATISFACTION_RATING",
+        "max_length" : 6,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SATISFACTION_RATING",
+      "type" : "integer",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 0,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : " ",
+        "source_field_id" : "RESULT.SATISFACTION_REASON",
+        "max_length" : 70,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "SATISFACTION_REASON",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    } ]
+  }, {
+    "id" : "06f86b41-6bf3-4bcf-82e4-b20ad69d7acb",
+    "fields" : [ {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 10,
+        "is_signed" : true
+      },
+      "nullable" : false,
+      "name" : "EMPLOYEE_CODE",
+      "type" : "INTEGER",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "INTEGER",
+        "is_unicode_string" : false,
+        "type_code" : "INT32"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_ID",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "EMPLOYEE_ASSIGNMENTS",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_ASSIGNMENTS",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "EMPLOYEE_SENIORITY",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "EMPLOYEE_QUALIFICATION",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "EMPLOYEE_PAY_RATE",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_START_HOUR",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_MIN_HOURS",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_MAX_HOURS",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_END_HOUR",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_DURATION",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_DAY_CODE",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 10,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "SHIFT_DAY",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "DEPARTMENT",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "SKILL_REQUIRED",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    } ]
+  }, {
+    "id" : "88b13780-fb3b-4095-9f49-215df373b162",
+    "fields" : [ {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.EMPLOYEE_CODE",
+        "max_length" : 10,
+        "is_signed" : true
+      },
+      "nullable" : false,
+      "name" : "EMPLOYEE_CODE",
+      "type" : "INTEGER",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "INTEGER",
+        "is_unicode_string" : false,
+        "type_code" : "INT32"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.SHIFT_ID",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_ID",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.EMPLOYEE_ASSIGNMENTS",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "EMPLOYEE_ASSIGNMENTS",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.SHIFT_ASSIGNMENTS",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_ASSIGNMENTS",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.EMPLOYEE_SENIORITY",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "EMPLOYEE_SENIORITY",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.EMPLOYEE_QUALIFICATION",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "EMPLOYEE_QUALIFICATION",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.EMPLOYEE_PAY_RATE",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "EMPLOYEE_PAY_RATE",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.SHIFT_START_HOUR",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_START_HOUR",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.SHIFT_MIN_HOURS",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_MIN_HOURS",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.SHIFT_MAX_HOURS",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_MAX_HOURS",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.SHIFT_END_HOUR",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_END_HOUR",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.SHIFT_DURATION",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_DURATION",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.SHIFT_DAY_CODE",
+        "max_length" : 5,
+        "is_signed" : true
+      },
+      "nullable" : true,
+      "name" : "SHIFT_DAY_CODE",
+      "type" : "SMALLINT",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "SMALLINT",
+        "is_unicode_string" : false,
+        "type_code" : "INT16"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.SHIFT_DAY",
+        "max_length" : 10,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "SHIFT_DAY",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.DEPARTMENT",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "DEPARTMENT",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    }, {
+      "metadata" : {
+        "is_key" : false,
+        "decimal_scale" : 0,
+        "description" : " ",
+        "source_field_id" : "SOURCE.SKILL_REQUIRED",
+        "max_length" : 30,
+        "is_signed" : false
+      },
+      "nullable" : true,
+      "name" : "SKILL_REQUIRED",
+      "type" : "string",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "VARCHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      }
+    } ]
+  } ],
+  "doc_type" : "pipeline",
+  "id" : "7401fe6b-e3bc-4e70-b9a9-74bd92c633b5",
+  "app_data" : {
+    "datastage" : {
+      "timestamp_format" : "",
+      "decimal_separator" : "",
+      "flowRunPriorityQueue" : "",
+      "time_format" : "",
+      "date_format" : "",
+      "message_handlers" : [ ],
+      "version" : "3.0.5"
+    },
+    "additionalProperties" : {
+      "transInputLinkMapper" : { },
+      "ELTDropdown" : {
+        "id" : "nesting",
+        "label" : "Generate nested SQL",
+        "value" : "NESTED_QUERY"
+      },
+      "saveChangeFrequency" : "save_changes_automatically",
+      "disableParamsCacheOnFlow" : false,
+      "rcpLinkList" : [ ],
+      "globalAcp" : true,
+      "enableRCP" : false,
+      "isDefineParameterToggled" : true,
+      "enableSchemaLessDesign" : false,
+      "runMode" : "ETL"
+    }
+  },
+  "version" : "3.0",
+  "parameters" : {
+    "local_parameters" : [ ]
+  }
+}
